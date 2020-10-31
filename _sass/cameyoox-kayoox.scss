@@ -1,0 +1,58 @@
+footer p {
+  color: white;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+form {
+  background: white;
+  padding: 20px;
+}
+
+#main_content_wrap {
+  background: white;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+}
+
+  .inner {
+    min-width: 320px;
+    max-width: 980px;
+  }
+
+  img {
+  position: relative;
+  margin: 0 auto;
+  max-width: 739px;
+  padding: 5px;
+  margin: 10px 0 10px 0;
+  border: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+}
+
+div.dataTables_filter, div.dataTables_length {
+  padding: 15px;
+}
+
+table th {
+    vertical-align: middle;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
