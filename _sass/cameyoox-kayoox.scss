@@ -56,3 +56,18 @@ table th {
   display: table;
   clear: both;
 }
+
+.text-center {
+    text-align: center;
+}
+
+.color-circle {
+    margin: 3px;
+    border: 1px solid #a7a7a7;
+    border-radius: 100%;
+    display: inline-block;
+    height: 9px;
+    margin-top: 3px;
+    vertical-align: middle;
+    width: 9px;
+}
