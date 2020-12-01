@@ -61,7 +61,7 @@ layout: default-es
 		document.getElementById("minprice").innerHTML = minprice + " €"
 
 		if(parseFloat(maxprice) > parseFloat(minprice)) {
-			document.getElementById("discount").innerHTML = "£ " + (parseFloat(maxprice) - parseFloat(minprice)).toFixed(1)
+			document.getElementById("discount").innerHTML = (parseFloat(maxprice) - parseFloat(minprice)).toFixed(1)  + " €"
 		} else {
 			document.getElementById("discount").innerHTML = "None"
 			document.getElementById("discount").classList.remove("discount");

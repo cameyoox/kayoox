@@ -62,7 +62,7 @@ layout: default-en
 		if(parseFloat(maxprice) > parseFloat(minprice)) {
 			document.getElementById("discount").innerHTML = "£ " + (parseFloat(maxprice) - parseFloat(minprice)).toFixed(1)
 		} else {
-			document.getElementById("discount").innerHTML = "None"
+			document.getElementById("discount").innerHTML = "Ninguno"
 			document.getElementById("discount").classList.remove("discount");
 		}
 	});

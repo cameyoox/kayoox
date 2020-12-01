@@ -71,9 +71,21 @@
                     }
                 },
                 {
+                  targets: [6,7,8],
+                  type: "num",
+                  searchable: false
+                },
+                {
                   targets: [9],
+                  type: "num",
+                  searchable: false,
                   render: function(data, type, full, meta) {
-                    return parseFloat(full[7]) - parseFloat(full[6])
+                    if(parseFloat(full[7]) > parseFloat(full[6])) {
+                      return (parseFloat(full[7]) - parseFloat(full[6])).toFixed(1)
+                    } else {
+                      return "0.0"
+                    }
+                    
                   }
                 }
               ]              
