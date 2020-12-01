@@ -9,6 +9,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
 
 {% if page.datatable == true %}
     
@@ -23,11 +24,75 @@
     <script>
       $(document).ready(function(){
           $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
-          $('table.display').DataTable( {
+          
+          var table = $('table.display').DataTable( {
+              ajax: '/assets/data/data-uk.txt',
               paging: true,
               stateSave: true,
-              searching: true
+              searching: true,
+              drawCallback: function() {
+                $("img.lazy").lazyload();
+              },
+              "createdRow": function ( row, data, index ) {
+                $(row).addClass("pointer");
+              },
+              columnDefs: [
+                {
+                  targets:  [0],
+                  visible: false,
+                  orderable: false,
+                  searchable: false
+                },
+                {
+                    targets: [1],
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, full, meta) {
+                      if (data != "") {
+                        return "<img class='lazy' data-original='https://www.yoox.com/images/items/11/" + data + "_14_f.jpg?width=90&height=115&impolicy=crop&gravity=Center' width='90' height='115'/>"  
+                      }
+                      return ""
+                    }
+                }, 
+                {
+                  targets: [5],
+                  render: function(data, type, full, meta) {
+                      if (data != "") {
+                        colourContent = "<span class='text-center'>"
+
+                        colours = data.split(" ")
+                        colours = colours.map(parseColour)
+                        colourContent = colourContent.concat(colours.join(""))
+                        colourContent = colourContent.concat("</span>")
+
+                        return colourContent
+                      }
+                      return ""
+                    }
+                },
+                {
+                  targets: [9],
+                  render: function(data, type, full, meta) {
+                    return parseFloat(full[7]) - parseFloat(full[6])
+                  }
+                }
+              ]
           });
+          
+          $('#example tbody').on('click', 'tr', function () {
+            var data = table.row( this ).data();
+            window.open('product.html?product=' + data[0] 
+                                  + '&brand=' + data[2] 
+                                  + '&category=' + data[3]
+                                  + '&price=' + data[6]
+                                  + '&maxprice=' + data[7]
+                                  + '&minprice=' + data[8]
+                                  ,'_blank');
+          });
+
+          function parseColour(value, index, array) {
+              return "<span class='color-circle' style='background-color:  " + value + "'></span>"
+          }
        });
     </script>
 {% endif %}
