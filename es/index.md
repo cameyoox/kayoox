@@ -1,5 +1,6 @@
 ---
 layout: default-es
+description: Rastreador de precios de Yoox
 datatable: true
 ---
 

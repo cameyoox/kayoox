@@ -1,5 +1,6 @@
 ---
 layout: default-en
+description: Price tracker for Yoox
 datatable: true
 ---
 
