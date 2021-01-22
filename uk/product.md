@@ -34,6 +34,10 @@ layout: default-en
 				<td>Current discount</td>
 				<td><div class="discount" id="discount"></div></td>	
 			</tr>
+			<tr>
+				<td>Max. discount</td>
+				<td><div id="maxdiscount"></div></td>	
+			</tr>
 		</tbody>
 	</table>
   </div>
@@ -56,14 +60,23 @@ layout: default-en
 		document.getElementById("product").innerHTML = "<a href='https://www.yoox.com/uk/" + product + "/item'>" + brand + " - " + category + "</a>";
 		document.getElementById("image").innerHTML = "<img src='https://www.yoox.com/images/items/11/" + product + "_14_f.jpg?width=90&amp;height=115&amp;impolicy=crop&amp;gravity=Center' width='90' height='115'/>";
 		document.getElementById("diagram").innerHTML = "<img style='border: 1px solid #555; margin: 0;' src='graphs/" + product + ".jpg' width='400'/>"
-		document.getElementById("price").innerHTML = "£ " + price
-		document.getElementById("maxprice").innerHTML = "£ " + maxprice
-		document.getElementById("minprice").innerHTML = "£ " + minprice
-		if(parseFloat(maxprice) > parseFloat(minprice)) {
-			document.getElementById("discount").innerHTML = "£ " + (parseFloat(maxprice) - parseFloat(minprice)).toFixed(1)
+
+		document.getElementById("price").innerHTML = parseFloat(price).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })
+		document.getElementById("maxprice").innerHTML = parseFloat(maxprice).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })
+		document.getElementById("minprice").innerHTML = parseFloat(minprice).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })
+	
+		if(parseFloat(price) < parseFloat(maxprice)) {
+			document.getElementById("discount").innerHTML = (parseFloat(maxprice) - parseFloat(price)).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })
 		} else {
-			document.getElementById("discount").innerHTML = "Ninguno"
+			document.getElementById("discount").innerHTML = "None"
 			document.getElementById("discount").classList.remove("discount");
 		}
+
+		if(parseFloat(minprice) < parseFloat(maxprice)) {
+			document.getElementById("maxdiscount").innerHTML = (parseFloat(maxprice) - parseFloat(minprice)).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })
+		} else {
+			document.getElementById("maxdiscount").innerHTML = "None"
+			document.getElementById("maxdiscount").classList.remove("discount");
+		}		
 	});
 </script>

@@ -10,9 +10,9 @@ datatable: true
             <tr>
                 <th>Id</th>
             	<th></th>
-                <th>Brand</th>
-                <th>Category</th>
-                <th>Sizes</th>
+                <th>Brand<br><input type="search" id="column2"/></th>
+                <th>Category<br><input type="search" id="column3"/></th>
+                <th>Size<br><input type="search" id="column4"/></th>
                 <th>Colours</th>
                 <th>Current price (£)</th>
                 <th>Max price (£)</th>

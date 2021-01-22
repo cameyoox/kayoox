@@ -34,6 +34,10 @@ layout: default-es
 				<td>Descuento actual</td>
 				<td><div class="discount" id="discount"></div></td>	
 			</tr>
+			<tr>
+				<td>Descuento máximo</td>
+				<td><div id="maxdiscount"></div></td>	
+			</tr>
 		</tbody>
 	</table>
   </div>
@@ -56,15 +60,22 @@ layout: default-es
 		document.getElementById("product").innerHTML = "<a href='https://www.yoox.com/es/" + product + "/item'>" + brand + " - " + category + "</a>";
 		document.getElementById("image").innerHTML = "<img src='https://www.yoox.com/images/items/11/" + product + "_14_f.jpg?width=90&amp;height=115&amp;impolicy=crop&amp;gravity=Center' width='90' height='115'/>";
 		document.getElementById("diagram").innerHTML = "<img style='border: 1px solid #555; margin: 0;' src='graphs/" + product + ".jpg' width='400'/>"
-		document.getElementById("price").innerHTML = price + " €"
-		document.getElementById("maxprice").innerHTML = maxprice + " €"
-		document.getElementById("minprice").innerHTML = minprice + " €"
 
-		if(parseFloat(maxprice) > parseFloat(minprice)) {
-			document.getElementById("discount").innerHTML = (parseFloat(maxprice) - parseFloat(minprice)).toFixed(1)  + " €"
+		document.getElementById("price").innerHTML = parseFloat(price).toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })
+		document.getElementById("maxprice").innerHTML = parseFloat(maxprice).toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })
+		document.getElementById("minprice").innerHTML = parseFloat(minprice).toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })
+
+		if(parseFloat(price) < parseFloat(maxprice)) {
+			document.getElementById("discount").innerHTML = (parseFloat(maxprice) - parseFloat(price)).toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })
 		} else {
-			document.getElementById("discount").innerHTML = "None"
+			document.getElementById("discount").innerHTML = "Sin descuento"
 			document.getElementById("discount").classList.remove("discount");
+		}
+
+		if(parseFloat(minprice) < parseFloat(maxprice)) {
+			document.getElementById("maxdiscount").innerHTML = (parseFloat(maxprice) - parseFloat(minprice)).toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })
+		} else {
+			document.getElementById("maxdiscount").innerHTML = "Sin descuento"
 		}
 	});
 </script>
