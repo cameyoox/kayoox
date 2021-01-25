@@ -2,49 +2,19 @@
 layout: default-en
 ---
 
-<div class="row">
-  <div class="column">
-  	<table>
-		<thead>
-			<th>
-				<div id="image"></div>
-			</th>
-			<th colspan="2">
-				<div id="product"></div>
-			</th>
-		</thead>
-		<thead style="border: 1px solid #696969;">
-			<th>Price type</th>
-			<th>Price</th>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Current</td>
-				<td><div id="price"></div></td>
-			</tr>
-			<tr>
-				<td>Max</td>
-				<td><div id="maxprice"></div></td>
-			</tr>
-			<tr>
-				<td>Min</td>
-				<td><div id="minprice"></div></td>	
-			</tr>
-			<tr>
-				<td>Current discount</td>
-				<td><div class="discount" id="discount"></div></td>	
-			</tr>
-			<tr>
-				<td>Max. discount</td>
-				<td><div id="maxdiscount"></div></td>	
-			</tr>
-		</tbody>
-	</table>
-  </div>
-  <div class="column">
-  	<div id="diagram"></div>
-  </div>
-</div>
+<div id="product"></div>
+<div id="image"></div>
+
+<ul>
+	<li><div class="productDetail">Current price:</div> <div id="price"></div></li>
+	<li><div class="productDetail">Max price:</div> <div id="maxprice"></div></li>
+	<li><div class="productDetail">Min price:</div> <div id="minprice"></div></li>	
+	<li><div class="productDetail">Current discount:</div> <div class="discount" id="discount"></div></li>
+	<li><div class="productDetail">Max discount:</div> <div id="maxdiscount"></div></li>
+</ul>
+
+<div id="diagram"></div>
+
 
 <script>
 	window.addEventListener("load", function(){
@@ -76,7 +46,6 @@ layout: default-en
 			document.getElementById("maxdiscount").innerHTML = (parseFloat(maxprice) - parseFloat(minprice)).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })
 		} else {
 			document.getElementById("maxdiscount").innerHTML = "None"
-			document.getElementById("maxdiscount").classList.remove("discount");
 		}		
 	});
 </script>

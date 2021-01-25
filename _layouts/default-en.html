@@ -53,12 +53,34 @@
                         return "<img class='lazy' data-original='https://www.yoox.com/images/items/11/" + data + "_14_f.jpg?width=90&height=115&impolicy=crop&gravity=Center' width='90' height='115'/>"  
                       }
                       return ""
+                    },
+                    createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('style', 'text-align: left;');
                     }
                 }, 
                 {
-                 targets: [2,3,4], 
+                 targets: [2], 
                  orderable: false,
                  searchable: true,
+                 createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Brand');
+                    }
+                },
+                {
+                 targets: [3], 
+                 orderable: false,
+                 searchable: true,
+                 createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Category');
+                    }
+                },
+                {
+                 targets: [4], 
+                 orderable: false,
+                 searchable: true,
+                 createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Size');
+                    }
                 },
                 {
                   targets: [5],
@@ -74,24 +96,43 @@
 
                         return colourContent
                       }
-                      return ""
+                      return "<span class='text-center'>"+parseColour('rgba(0, 0, 0, 0)')+"</span>"
+                    },
+                  createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Colours');
+                    }  
+                },
+                {
+                  targets: [6],
+                  searchable: false,
+                  render: $.fn.dataTable.render.number( '.', ',', 2, '£' ),
+                  createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Current price');
                     }
                 },
                 {
-                  targets: [6,7,8],
+                  targets: [7],
                   searchable: false,
-                  render: $.fn.dataTable.render.number( ',', '.', 2, '£' )
+                  render: $.fn.dataTable.render.number( '.', ',', 2, '£' ),
+                  createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Max. price');
+                    }
+                },
+                {
+                  targets: [8],
+                  searchable: false,
+                  render: $.fn.dataTable.render.number( '.', ',', 2, '£' ),
+                  createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Min. price');
+                    }
                 },
                 {
                   targets: [9],
                   searchable: false,
-                  render: function(data, type, full, meta) {
-                    discount_value = 0;
-                    if(parseFloat(full[7]) > parseFloat(full[6])) {
-                      discount_value = (parseFloat(full[7]) - parseFloat(full[6]))
-                    } 
-                    return $.fn.dataTable.render.number( ',', '.', 2, '£' ).display(discount_value)
-                  }
+                  render: $.fn.dataTable.render.number( '.', ',', 2, '£' ),
+                  createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Current discount');
+                    }
                 }
               ],
               initComplete: function () {

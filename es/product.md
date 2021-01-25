@@ -2,49 +2,19 @@
 layout: default-es
 ---
 
-<div class="row">
-  <div class="column">
-  	<table>
-		<thead>
-			<th>
-				<div id="image"></div>
-			</th>
-			<th colspan="2">
-				<div id="product"></div>
-			</th>
-		</thead>
-		<thead style="border: 1px solid #696969;">
-			<th>Tipo de precio</th>
-			<th>Precio</th>
-		</thead>
-		<tbody>
-			<tr>
-				<td>Actual</td>
-				<td><div id="price"></div></td>
-			</tr>
-			<tr>
-				<td>Máximo</td>
-				<td><div id="maxprice"></div></td>
-			</tr>
-			<tr>
-				<td>Mínimo</td>
-				<td><div id="minprice"></div></td>	
-			</tr>
-			<tr>
-				<td>Descuento actual</td>
-				<td><div class="discount" id="discount"></div></td>	
-			</tr>
-			<tr>
-				<td>Descuento máximo</td>
-				<td><div id="maxdiscount"></div></td>	
-			</tr>
-		</tbody>
-	</table>
-  </div>
-  <div class="column">
-  	<div id="diagram"></div>
-  </div>
-</div>
+<div id="product"></div>
+<div id="image"></div>
+
+<ul>
+	<li><div class="productDetail">Precio actual:</div> <div id="price"></div></li>
+	<li><div class="productDetail">Precio máximo:</div> <div id="maxprice"></div></li>
+	<li><div class="productDetail">Precio mínimo:</div> <div id="minprice"></div></li>	
+	<li><div class="productDetail">Descuento actual:</div> <div class="discount" id="discount"></div></li>
+	<li><div class="productDetail">Descuento máximo:</div> <div id="maxdiscount"></div></li>
+</ul>
+
+<div id="diagram"></div>
+
 
 <script>
 	window.addEventListener("load", function(){
