@@ -1,5 +1,6 @@
 ---
 layout: default-en
+sitemap: false
 ---
 
 <div id="product"></div>

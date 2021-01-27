@@ -2,6 +2,7 @@
 layout: default-en
 description: Price tracker for Yoox
 datatable: true
+sitemap: false
 ---
 
 <div class="datatable-begin">

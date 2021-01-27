@@ -1,5 +1,6 @@
 ---
 layout: default-es
+sitemap: false
 ---
 
 <div id="product"></div>
@@ -14,7 +15,6 @@ layout: default-es
 </ul>
 
 <div id="diagram"></div>
-
 
 <script>
 	window.addEventListener("load", function(){

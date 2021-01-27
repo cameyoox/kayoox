@@ -4,3 +4,6 @@ title: Cameyoox
 
 analytics_uk: G-361FNV75S6
 analytics_es: G-7K8GZB7G3T
+
+plugins:
+  - jekyll-sitemap

@@ -2,6 +2,7 @@
 layout: default-es
 description: Rastreador de precios de Yoox
 datatable: true
+sitemap: false
 ---
 
 <div class="datatable-begin">
