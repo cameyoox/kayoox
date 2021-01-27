@@ -24,9 +24,15 @@
       -->
     <script>
       $(document).ready(function() {
+          // First, get the search parameter. Here I use example.com#search=yourkeyword
+          var searchHash = location.hash.substr(1),
+          searchString = searchHash.substr(searchHash.indexOf('search='))
+                      .split('&')[0]
+                      .split('=')[1];
+
           $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
           
-          var table = $('table.display').DataTable( {
+          var table = $('table.display').DataTable({
               ajax: '/assets/data/data-uk.txt',
               paging: true,
               stateSave: true,
@@ -187,6 +193,11 @@
                   });  
                 }
               });
+
+              if(searchHash && searchString) {
+                console.log('search term ' + decodeURI(searchString))
+                table.search(decodeURI(searchString), 3 ).draw();
+              }
             
               $('#example tbody').on('click', 'tr', function () {
                 var data = table.row( this ).data();
@@ -201,7 +212,8 @@
 
               function parseColour(value, index, array) {
                   return "<span class='color-circle' style='background-color:  " + value + "'></span>"
-              }
+              }     
+              
        });
     </script>
 {% endif %}
@@ -245,5 +257,6 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+
   </body>
 </html>

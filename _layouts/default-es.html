@@ -24,6 +24,12 @@
       -->
     <script>
       $(document).ready(function(){
+          // First, get the search parameter. Here I use example.com#search=yourkeyword
+          var searchHash = location.hash.substr(1),
+          searchString = searchHash.substr(searchHash.indexOf('buscar='))
+                      .split('&')[0]
+                      .split('=')[1];
+
           $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
           
           var table = $('table.display').DataTable( {
@@ -189,7 +195,11 @@
                     }
                   });  
                 }
-              });             
+              });      
+
+              if(searchHash && searchString) {
+                table.search(decodeURI(searchString), 3 ).draw();
+              }       
           
               $('#example tbody').on('click', 'tr', function () {
                 var data = table.row( this ).data();
