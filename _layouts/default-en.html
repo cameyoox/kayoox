@@ -51,7 +51,9 @@
           
           var table = $('table.display').DataTable({
               ajax: '/assets/data/data-uk.txt',
-              "deferRender": true,
+              deferRender: true,
+              scrollX: false,
+              scrollY: false,
               paging: true,
               stateSave: true,
               searching: true,
