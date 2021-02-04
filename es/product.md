@@ -104,5 +104,7 @@ graph: true
 		        }
 			});
 		});
+
+		document.title = brand + ' ' + category + ' | Cameyoox'
 	});
 </script>

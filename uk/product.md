@@ -1,5 +1,6 @@
 ---
 layout: default-en
+description: Price tracker for Yoox
 sitemap: false
 graph: true
 ---
@@ -100,9 +101,11 @@ graph: true
 				                return '£' + tooltipItem.yLabel;
 		            		}
 		        		}
-   					 }
+   					}
 		        }
 			});
     	});
+
+    	document.title = brand + ' ' + category + ' | Cameyoox'
 	});
 </script>
