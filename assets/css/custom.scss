@@ -56,7 +56,7 @@ a {
 
 .tiles ul {
   list-style-type: none;
-  padding: 0;
+  margin: 20px 0 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -102,6 +102,31 @@ a {
 .footer {
     line-height: 50px;
     height: 50px;
+}
+
+.detail-margin {
+	margin-top: 20px;
+	margin-left: 20px;
+
+}
+
+.center-detail {
+  background-color: white;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  width: 90%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+}
+
+.detail-flow {
+	display: inline-block;
+}
+
+.left-align {
+	text-align: left;
+	display: inline-block;
 }
 
 div.dataTables_filter, div.dataTables_length {
@@ -257,4 +282,5 @@ table {
   padding: 0px 10px 0px 0px; 
   float: left; 
   font-weight: bold;
+  display: inline-block;
 }

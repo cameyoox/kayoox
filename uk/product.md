@@ -5,18 +5,23 @@ sitemap: false
 graph: true
 ---
 
-<div id="product"></div>
-<div id="image"></div>
+<div class="center-all">
+	<div id="product"></div>
+</div>
 
-<ul>
-	<li><div class="productDetail">Current price:</div> <div id="price"></div></li>
-	<li><div class="productDetail">Max price:</div> <div id="maxprice"></div></li>
-	<li><div class="productDetail">Min price:</div> <div id="minprice"></div></li>	
-	<li><div class="productDetail">Current discount:</div> <div class="discount" id="discount"></div></li>
-	<li><div class="productDetail">Max discount:</div> <div id="maxdiscount"></div></li>
-</ul>
-
-<div style="width: 375px; height: 300px;"><canvas id="myChart" className="chartjs"></canvas></div>
+<div class="center-detail">
+	<div id="image"></div>
+	<div class="tiles center-all">
+	<ul>
+		<li><div class="productDetail">Current price:</div> <div id="price" class="left-align"></div></li>
+		<li><div class="productDetail">Max price:</div> <div id="maxprice" class="left-align"></div></li>
+		<li><div class="productDetail">Min price:</div> <div id="minprice" class="left-align"></div></li>	
+		<li><div class="productDetail">Current discount:</div> <div class="discount left-align" id="discount"></div></li>
+		<li><div class="productDetail">Max discount:</div> <div id="maxdiscount" class="left-align"></div></li>
+	</ul>
+	</div>
+	<div class="center-detail" style="width: 375px; height: 300px;"><canvas id="myChart" className="chartjs"></canvas></div>
+</div>
 
 <script>
 	window.addEventListener("load", function(){
@@ -29,8 +34,8 @@ graph: true
 		maxprice = urlParams.get('maxprice')
 		minprice = urlParams.get('minprice')
 
-		document.getElementById("product").innerHTML = "<a href='https://www.yoox.com/uk/" + product + "/item'>" + brand + " - " + category + "</a>";
-		document.getElementById("image").innerHTML = "<img src='https://www.yoox.com/images/items/11/" + product + "_14_f.jpg?width=90&amp;height=115&amp;impolicy=crop&amp;gravity=Center' width='90' height='115'/>";
+		document.getElementById("product").innerHTML = "<a href='https://www.yoox.com/uk/" + product + "/item' class='detail-margin button-text'>BUY NOW: " + brand + " - " + category + "</a>";
+		document.getElementById("image").innerHTML = "<img src='https://www.yoox.com/images/items/11/" + product + "_14_f.jpg?width=350&amp;height=490&amp;impolicy=crop&amp;gravity=Center' width='350' height='490' class='detail-margin'/>";
 
 		document.getElementById("price").innerHTML = parseFloat(price).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })
 		document.getElementById("maxprice").innerHTML = parseFloat(maxprice).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })
