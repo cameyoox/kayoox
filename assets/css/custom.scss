@@ -106,8 +106,6 @@ a {
 
 .detail-margin {
 	margin-top: 20px;
-	margin-left: 20px;
-
 }
 
 .center-detail {
@@ -170,6 +168,29 @@ table th {
 
 .pointer {
     cursor: pointer;
+}
+
+.diagram {
+	width: 350px;
+	height: 300px;
+}
+
+@media screen and (max-width: 375px) {
+
+.diagram {
+	width: 300px;
+	height: 250px;
+}
+
+.tiles ul{
+	padding-left: 10px;
+}
+
+.center-all{
+	font-size: 9px;
+	padding-left: 0px;
+}
+
 }
 
 ul.ui-autocomplete {

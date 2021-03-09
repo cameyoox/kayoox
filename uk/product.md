@@ -20,7 +20,7 @@ graph: true
 		<li><div class="productDetail">Max discount:</div> <div id="maxdiscount" class="left-align"></div></li>
 	</ul>
 	</div>
-	<div class="center-detail" style="width: 375px; height: 300px;"><canvas id="myChart" className="chartjs"></canvas></div>
+	<div class="center-detail diagram"><canvas id="myChart" className="chartjs"></canvas></div>
 </div>
 
 <script>
