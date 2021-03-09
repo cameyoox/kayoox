@@ -53,10 +53,10 @@ datatable: true
             </a>
         </li>
         <li>
-            <a href="/uk/categories/espadriles.html">
+            <a href="/uk/categories/espadrilles.html">
                 <div class="tile-container">
                     <img class="lazy-loaded" src="https://www.yoox.com/images/items/11/11995797rn_14_f.jpg?width=350&height=490&impolicy=crop&gravity=Center" name="&amp;lid=zoom&amp;lpos=item_photo" title="ESPADRILES" alt="ESPADRILES" itemprop="image">
-                    <div class="centered">ESPADRILES</div>
+                    <div class="centered">ESPADRILLES</div>
                 </div>
             </a>
         </li>
