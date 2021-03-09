@@ -221,6 +221,7 @@ table th {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-weight: normal;
 }
 
 .dropdown {
@@ -242,6 +243,8 @@ table th {
 
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
   color: grey;
+  font-weight: normal;
+  font-family: inherit;	
 }
 
 .dropdown-content {
@@ -260,6 +263,7 @@ table th {
   text-decoration: none;
   display: block;
   text-align: left;
+  font-family: inherit;
 }
 
 .dropdown-content a:hover {
