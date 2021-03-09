@@ -1,11 +1,11 @@
 ---
 layout: default-en
-description: Price tracker for Yoox
+description: Score the best deals in Yoox
 sitemap: false
 graph: true
 ---
 
-<div class="center-all">
+<div class="center-all bottom-separation">
 	<div id="product"></div>
 </div>
 

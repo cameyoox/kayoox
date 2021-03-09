@@ -211,7 +211,10 @@
                         }
                       }); 
                     }
-                  });  
+                  }); 
+
+                  document.getElementById("loader").remove();
+                
                 }
               });
 
@@ -254,7 +257,7 @@
     </div>
 
     <!-- MAIN CONTENT -->
-    <div class="content">
+    <div id="content-container" class="content">
       {{ content }}
     </div>
 

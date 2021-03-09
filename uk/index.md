@@ -1,7 +1,7 @@
 ---
 layout: default-en
-title: Price tracker for Yoox
-description: Price tracker for Yoox
+title: Score the best deals in Yoox
+description: Score the best deals in Yoox
 datatable: true
 ---
 
@@ -32,9 +32,11 @@ datatable: true
             </a>
         </li>
     </ul>
-    <div class="center-all">
-        <a class="shop-all button-text" href="/uk/categories/shoes.html">SHOP ALL SHOES</a>
-    </div>
+    <ul>
+        <li class="center-all">
+            <a class="shop-all button-text" href="/uk/categories/shoes.html">SHOP ALL SHOES</a>
+        </li>
+    </ul>
     <ul>
         <li>
             <a href="/uk/categories/sandals.html">
