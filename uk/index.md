@@ -33,13 +33,13 @@ datatable: true
         </li>
     </ul>
     <div class="center-all">
-        <a class="shop-all button-text" href="/uk/index.html">SHOP ALL SHOES</a>
+        <a class="shop-all button-text" href="/uk/categories/shoes.html">SHOP ALL SHOES</a>
     </div>
     <ul>
         <li>
             <a href="/uk/categories/sandals.html">
                 <div class="tile-container">
-                    <img class="lazy-loaded" src="https://www.yoox.com/images/items/11/11692658fh_14_f.jpg?width=350&height=490&impolicy=crop&gravity=Center" name="&amp;lid=zoom&amp;lpos=item_photo" title="FLATS" alt="SANDALS" itemprop="image">
+                    <img class="lazy-loaded" src="https://www.yoox.com/images/items/11/11692658fh_14_f.jpg?width=350&height=490&impolicy=crop&gravity=Center" name="&amp;lid=zoom&amp;lpos=item_photo" title="SANDALS" alt="SANDALS" itemprop="image">
                     <div class="centered">SANDALS</div>
                 </div>
             </a>
@@ -47,7 +47,7 @@ datatable: true
         <li>
             <a href="/uk/categories/sneakers.html">
                 <div class="tile-container">
-                    <img class="lazy-loaded" src="https://www.yoox.com/images/items/11/11998539eg_14_f.jpg?width=350&height=490&impolicy=crop&gravity=Center" name="&amp;lid=zoom&amp;lpos=item_photo" title="FLATS" alt="SNEAKERS" itemprop="image">
+                    <img class="lazy-loaded" src="https://www.yoox.com/images/items/11/11998539eg_14_f.jpg?width=350&height=490&impolicy=crop&gravity=Center" name="&amp;lid=zoom&amp;lpos=item_photo" title="SNEAKERS" alt="SNEAKERS" itemprop="image">
                     <div class="centered">SNEAKERS</div>
                 </div>
             </a>

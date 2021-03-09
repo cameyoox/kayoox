@@ -23,6 +23,10 @@ graph: true
 	<div class="center-detail diagram"><canvas id="myChart" className="chartjs"></canvas></div>
 </div>
 
+<div class="center-all">
+	<div id="product2"></div>
+</div>
+
 <script>
 	window.addEventListener("load", function(){
 		urlParams = new URLSearchParams(window.location.search);
@@ -34,7 +38,10 @@ graph: true
 		maxprice = urlParams.get('maxprice')
 		minprice = urlParams.get('minprice')
 
-		document.getElementById("product").innerHTML = "<a href='https://www.yoox.com/uk/" + product + "/item' class='detail-margin button-text'>BUY NOW: " + brand + " - " + category + "</a>";
+		document.getElementById("product").innerHTML = "<a href='https://www.yoox.com/uk/" + product + "/item' class='detail-margin button-text'>BUY NOW " + category.toUpperCase() + " " + brand + "</a>";
+
+		document.getElementById("product2").innerHTML = "<a href='https://www.yoox.com/uk/" + product + "/item' class='detail-margin button-text'>BUY NOW " + category.toUpperCase() + " " + brand + "</a>";
+
 		document.getElementById("image").innerHTML = "<img src='https://www.yoox.com/images/items/11/" + product + "_14_f.jpg?width=350&amp;height=490&amp;impolicy=crop&amp;gravity=Center' width='350' height='490' class='detail-margin'/>";
 
 		document.getElementById("price").innerHTML = parseFloat(price).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })
