@@ -11,8 +11,7 @@ sitemap: false
 </div>
 
 <div class="navbar" onload="alignTop()">
-  <a href="/uk/categories/shoes.html">ALL SHOES</a>
-  <a href="/uk/categories/ballet-flats.html">BALLET FLATS</a>
+  <a href="/uk/categories/courts.html">COURTS</a>
   <div class="dropdown">
       <button id="boots-menu-btn" class="dropbtn" onclick="showMenu('boots-menu')">BOOTS ▼
       </button>
@@ -24,11 +23,11 @@ sitemap: false
         <a href="/uk/categories/knee-high-boots.html">KNEE-HIGH BOOTS</a>
       </div>
   </div> 
-  <a href="/uk/categories/courts.html">COURTS</a>
-  <a href="/uk/categories/espadrilles.html">ESPADRILLES</a>
-  <a href="/uk/categories/laced-shoes.html">LACED SHOES</a>
+  <a href="/uk/categories/ballet-flats.html">BALLET FLATS</a>
   <a href="/uk/categories/sandals.html">SANDALS</a>
   <a href="/uk/categories/sneakers.html">SNEAKERS</a>
+  <a href="/uk/categories/espadrilles.html">ESPADRILLES</a>
+  <a href="/uk/categories/laced-shoes.html">LACED SHOES</a>
   <a href="/uk/categories/slides-slippers.html">SLIPPERS</a>
   <div class="dropdown">
       <button id="other-menu-btn" class="dropbtn" onclick="showMenu('other-menu')">OTHER SHOES ▼
@@ -41,6 +40,7 @@ sitemap: false
         <a href="/uk/categories/mules-clogs.html">MULES AND CLOGS</a>
       </div>
   </div> 
+  <a href="/uk/categories/shoes.html">ALL SHOES</a>
 </div>
 
 <div class="datatable-begin">
@@ -89,6 +89,4 @@ sitemap: false
     window.onload = function() {
         document.getElementById("content-container").classList.add("content-list-page");
     }
-
-    
 </script>
