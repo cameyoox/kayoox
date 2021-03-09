@@ -42,7 +42,7 @@
       -->
     <script>
       $(document).ready(function() {
-          // First, get the search parameter. Here I use example.com#search=yourkeyword
+          // First, get the search parameter
           var searchHash = location.hash.substr(1),
           searchString = searchHash.substr(searchHash.indexOf('search='))
                       .split('&')[0]
@@ -223,7 +223,7 @@
                 title_text = decodeURIComponent(searchString).charAt(0).toUpperCase() + decodeURIComponent(searchString).slice(1);
                 document.title = title_text + " | Cameyoox";
               } else {
-                table.search("").draw();
+                table.search("", 3).draw();
               }   
             
               $('#example tbody').on('click', 'tr', function () {

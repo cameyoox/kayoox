@@ -1,11 +1,11 @@
 ---
 layout: default-es
-description: Rastreador de precios de Yoox
+description: Consigue las mejores ofertas de Yoox
 sitemap: false
 graph: true
 ---
 
-<div class="center-all">
+<div class="center-all bottom-separation">
 	<div id="product"></div>
 </div>
 

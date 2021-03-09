@@ -40,8 +40,8 @@
          Credit here: http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
       -->
     <script>
-      $(document).ready(function(){
-          // First, get the search parameter. Here I use example.com#search=yourkeyword
+      $(document).ready(function() {
+          // First, get the search parameter
           var searchHash = location.hash.substr(1),
           searchString = searchHash.substr(searchHash.indexOf('buscar='))
                       .split('&')[0]
@@ -49,7 +49,7 @@
 
           $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
           
-          var table = $('table.display').DataTable( {
+          var table = $('table.display').DataTable({
               ajax: '/assets/data/data-es.txt',
               deferRender: true,
               scrollX: false,
@@ -188,12 +188,12 @@
                       }
 
                       $( "#"+ columnId ).autocomplete({
-                          source: availableTags,
-                          select: function(e, ui) {
-                              
-                              if ( column.search() !== ui.item.value ) {
-                                searchTerm = ui.item.value;
-                                  
+                            source: availableTags,
+                            select: function(e, ui) {
+                                
+                                if ( column.search() !== ui.item.value ) {
+                                  searchTerm = ui.item.value;
+                                    
                                   if(column.index() == 4) {
                                       searchTerm = ui.item.value + "(?![^ ])";  
                                   }
@@ -201,7 +201,7 @@
                                   column
                                     .search( searchTerm , true, false)
                                     .draw();
-                            }
+                              }
                           }
                       });
                       
@@ -213,16 +213,19 @@
                         }
                       }); 
                     }
-                  });  
+                  }); 
+
+                  document.getElementById("loader").remove(); 
+                
                 }
               });
 
               if(searchHash && searchString) {
-                table.search(decodeURI(searchString), 3 ).draw();
+                table.search(decodeURI(searchString), 3).draw();
                 title_text = decodeURIComponent(searchString).charAt(0).toUpperCase() + decodeURIComponent(searchString).slice(1);
                 document.title = title_text + " | Cameyoox";
               } else {
-                table.search("").draw();
+                table.search("", 3).draw();
               }    
           
               $('#example tbody').on('click', 'tr', function () {
@@ -249,14 +252,14 @@
   </head>
 
   <body>
-<!-- HEADER -->
+    <!-- HEADER -->
     <div class="header center" onclick="location.href='https://www.cameyoox.com';">
           <h1 id="project_title" class="capitalize">{{ site.title }}</h1>
           <h2 id="project_tagline" class="caption">{{ page.description }}</h2>
     </div>
 
     <!-- MAIN CONTENT -->
-    <div class="content">
+    <div id="content-container" class="content">
       {{ content }}
     </div>
 
