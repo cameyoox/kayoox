@@ -79,7 +79,8 @@
                     searchable: false,
                     render: function(data, type, full, meta) {
                       if (data != "") {
-                        return "<img class='lazy' data-original='https://www.yoox.com/images/items/11/" + data + "_14_f.jpg?width=90&height=115&impolicy=crop&gravity=Center' width='90' height='115'/>"  
+                        var prefix = data.substring(0,2)
+                        return "<img class='lazy' data-original='https://www.yoox.com/images/items/" + prefix + "/" + data + "_14_f.jpg?width=90&height=115&impolicy=crop&gravity=Center' width='90' height='115'/>"  
                       }
                       return ""
                     },

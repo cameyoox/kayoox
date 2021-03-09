@@ -42,7 +42,8 @@ graph: true
 
 		document.getElementById("product2").innerHTML = "<a href='https://www.yoox.com/es/" + product + "/item' class='detail-margin button-text'>COMPRAR " + category.toUpperCase() + " " + brand + "</a>";
 
-		document.getElementById("image").innerHTML = "<img src='https://www.yoox.com/images/items/11/" + product + "_14_f.jpg?width=350&amp;height=490&amp;impolicy=crop&amp;gravity=Center' width='350' height='490' class='detail-margin'/>";
+		var prefix = product.substring(0,2)
+		document.getElementById("image").innerHTML = "<img src='https://www.yoox.com/images/items/" + prefix + "/" + product + "_14_f.jpg?width=350&amp;height=490&amp;impolicy=crop&amp;gravity=Center' width='350' height='490' class='detail-margin'/>";
 
 		document.getElementById("price").innerHTML = parseFloat(price).toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })
 		document.getElementById("maxprice").innerHTML = parseFloat(maxprice).toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })
