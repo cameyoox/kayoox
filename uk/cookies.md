@@ -24,6 +24,6 @@ sitemap: true
 	<p>If you want to restrict or block the cookies that are set by our website, you can do so through your browser setting. Alternatively, you can visit www.internetcookies.org, which contains comprehensive information on how to do this on a wide variety of browsers and devices. You will find general information about cookies and details on how to delete cookies from your device.</p>
 	
 	<h2>Contacting us</h2>
-	<p>If you have any questions about this policy or our use of cookies, please, <a href="">contact us</a>.</p>
+	<p>If you have any questions about this policy or our use of cookies, please, <a href="/uk/contact.html">contact us</a>.</p>
 </div>
 

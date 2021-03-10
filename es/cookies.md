@@ -24,6 +24,6 @@ sitemap: true
 	<p>Si quiere restringir o bloquear las cookies que nuestro sitio ha establecido, puede hacerlo mediante la configuración del navegador. También puede visitar www.internetcookies.org, que contiene extensa información sobre cómo hacerlo.</p>
 	
 	<h2>Contáctenos</h2>
-	<p>Si tiene más pregunas sobre esta política o el uso de nuestras cookies, por favor, <a href="#">contacte con nosotros.</a></p>
+	<p>Si tiene más pregunas sobre esta política o el uso de nuestras cookies, por favor, <a href="/es/contacto.html">contacte con nosotros.</a></p>
 </div>
 
