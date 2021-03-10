@@ -1,6 +1,20 @@
 theme: jekyll-theme-minimal
 name: Cameyoox
 title: Cameyoox
+description: Score the best deals in Yoox
+tagline: Score the best deals in Yoox
+twitter:
+  username: cameyoox
+  card: summary
+logo: favicon.ico
+social:
+  name: Cameyoox
+  links:
+    - https://twitter.com/cameyoox
+    - https://www.instagram.com/cameyoox
+    - https://www.facebook.com/Cameyoox-108763624616741
+locale: en
+image: /assets/images/cameyoox-400.png
 
 analytics_uk: G-361FNV75S6
 analytics_es: G-7K8GZB7G3T

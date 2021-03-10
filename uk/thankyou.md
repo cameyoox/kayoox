@@ -1,6 +1,7 @@
 ---
 layout: default-en
-description: Score the best deals in Yoox
+description: We love shoes and discounts
+title: Score the best deals in Yoox
 sitemap: false
 ---
 <h1 class="center">Thank you for your feedback!</h1>
