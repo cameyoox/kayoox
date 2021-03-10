@@ -13,5 +13,5 @@ sitemap: true
 		Cameyoox también dispone de una potente búsqueda que te permite encontrar el par perfecto por talla o marca y ordenar por precio o descuento.
 	<p>
 		Estamos mejorando contínuamente agregando nuevas funcionalidades. ¡Nos gustaría mucho escuchar tus ideas! Háznoslas saber 
-		<a href="#">contactándonos aquí</a>. 
+		<a href="/es/contacto.html">contactándonos aquí</a>. 
 	</p>
