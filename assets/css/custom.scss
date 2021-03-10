@@ -24,6 +24,7 @@ p {
 a, a:hover {
 	color: black;
   text-decoration: none;
+  font-weight: normal;
 }
 
 .header {
@@ -110,8 +111,8 @@ a, a:hover {
 }
 
 .footer {
-    line-height: 50px;
-    height: 50px;
+    line-height: 40px;
+    height: 40px;
 }
 
 .detail-margin {
@@ -444,4 +445,24 @@ table {
   left: 50%;
   transform: translate(-50%, -50%);
 	
+}
+
+.footer ul {
+  list-style-type: none;
+  padding-inline-start: 40px;
+  padding-inline-end: 40px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap; /* assumes you only want one row */
+}
+
+.text {
+  margin: 40px;
+}
+
+.text p, h2 {
+    margin-right: 10px;
+    margin-bottom: 20px;
 }
