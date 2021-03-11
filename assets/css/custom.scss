@@ -279,6 +279,9 @@ table th {
 .show {
   display: block;
 }
+.hide {
+  display: none;
+}
 
 @media screen and (max-width: 375px) {
 
@@ -498,4 +501,48 @@ button {
   font-size: 1.1em;
   cursor: pointer;
   background-color: #333;
+}
+
+/* Cookies */
+
+.cookieConsentContainer {
+    opacity: 0.85; 
+    z-index: 999;
+    width: 100%;
+    background: #666;
+    position: fixed;
+    bottom: 0px;
+}
+
+.cookieTitle {
+    color: #fff;
+    font-size: 22px;
+    line-height: 20px;
+    padding:25px 0 5px 30px;
+}
+
+.cookieDesc p {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.cookieButton a {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 14px;
+    background: #000;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    text-align: center;
+    transition: background .3s;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
