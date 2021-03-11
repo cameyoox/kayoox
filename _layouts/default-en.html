@@ -17,8 +17,11 @@
     <meta name="description" content="Discounted designer women's shoes">
     <meta name="keywords" content="Shoes, footwear, boots, women, discount, sales, designer, branded, luxury, outlet">
     <meta name="author" content="Cameyoox">
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="http://www.cameyoox.com/assets/images/cameyoox.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/custom.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -41,7 +44,7 @@
       -->
     <script>
       $(document).ready(function() {
-          // First, get the search parameter. Here I use example.com#search=yourkeyword
+          // First, get the search parameter
           var searchHash = location.hash.substr(1),
           searchString = searchHash.substr(searchHash.indexOf('search='))
                       .split('&')[0]
@@ -76,7 +79,8 @@
                     searchable: false,
                     render: function(data, type, full, meta) {
                       if (data != "") {
-                        return "<img class='lazy' data-original='https://www.yoox.com/images/items/11/" + data + "_14_f.jpg?width=90&height=115&impolicy=crop&gravity=Center' width='90' height='115'/>"  
+                        var prefix = data.substring(0,2)
+                        return "<img class='lazy' data-original='https://www.yoox.com/images/items/" + prefix + "/" + data + "_14_f.jpg?width=90&height=115&impolicy=crop&gravity=Center' width='90' height='115'/>"  
                       }
                       return ""
                     },
@@ -210,7 +214,10 @@
                         }
                       }); 
                     }
-                  });  
+                  }); 
+
+                  document.getElementById("loader").remove();
+                
                 }
               });
 
@@ -218,7 +225,9 @@
                 table.search(decodeURI(searchString), 3 ).draw();
                 title_text = decodeURIComponent(searchString).charAt(0).toUpperCase() + decodeURIComponent(searchString).slice(1);
                 document.title = title_text + " | Cameyoox";
-              }
+              } else {
+                table.search("", 3).draw();
+              }   
             
               $('#example tbody').on('click', 'tr', function () {
                 var data = table.row( this ).data();
@@ -244,27 +253,25 @@
   </head>
 
   <body>
-
     <!-- HEADER -->
-    <div id="header_wrap" class="outer" onclick="location.href='https://www.cameyoox.com';">
-        <header class="inner">
-          <h1 id="project_title">{{ site.title }}</h1>
-          <h2 id="project_tagline">{{ page.description }}</h2>
-        </header>
+    <div class="header center" onclick="location.href='https://www.cameyoox.com';">
+          <h1 id="project_title" class="capitalize">{{ site.title }}</h1>
+          <h2 id="project_tagline" class="caption">{{ page.title }}</h2>
     </div>
 
     <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        {{ content }}
-      </section>
+    <div id="content-container" class="content">
+      {{ content }}
     </div>
 
     <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">{{ site.title }}</p>
-      </footer>
+    <div class="center footer">
+      <p class="copyright">© 2021 {{ site.title }}</p>
+        <ul>
+          <li><a href="/uk/cookies.html">Cookies policy</a></li>
+          <li><a href="/uk/about.html">About us</a></li>
+          <li><a href="/uk/contact.html">Contact</a></li>
+        </ul>
     </div>
   </body>
 </html>

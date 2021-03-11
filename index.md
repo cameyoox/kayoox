@@ -2,12 +2,14 @@
 layout: default-en
 ---
 
-Welcome to Cameyoox! Select a site:
+<p>Welcome to Cameyoox! Select a site:</p>
 
-<table>
-	<tr><td>🇪🇸 <a href="#" id="es">España</a></td></tr>
-	<tr><td>🇬🇧 <a href="#" id="uk">United Kingdom</a></td></tr>
-</table>
+<div class="tiles">
+<ul>
+	<li>🇪🇸 <a class="" href="#" id="es">España</a></li>
+	<li>🇬🇧 <a href="#" id="uk">United Kingdom</a></li>
+</ul>
+</div>
 
 <script>
 	$('#es').on( "click", function() {
