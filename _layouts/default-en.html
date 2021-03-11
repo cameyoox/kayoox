@@ -248,8 +248,9 @@
               /* Cookies consent */
 
               var cookieBtn = document.getElementById('cookieButton');
-              
+
               cookieBtn.onclick = function() {
+
                 $.cookie('cookieConsent', 'true');
                 document.getElementById('cookieContainer').style.display = 'none'
               };
@@ -264,6 +265,27 @@
         });
       
    </script>
+{% else %}
+  <script>
+    $(document).ready(function() {
+      /* Cookies consent */
+
+      var cookieBtn = document.getElementById('cookieButton');
+      cookieBtn.onclick = function() {
+
+        $.cookie('cookieConsent', 'true');
+        document.getElementById('cookieContainer').style.display = 'none'
+      };
+
+      var cookieConsented = $.cookie("cookieConsent");
+
+      if(cookieConsented != null && cookieConsented) {
+        document.getElementById('cookieContainer').style.display = 'none'
+      } else {
+        document.getElementById('cookieContainer').style.display = 'block'
+      }  
+     });
+  </script>   
 {% endif %}
 
 {% seo %}
@@ -275,7 +297,7 @@
     <!-- HEADER -->
     <div class="header center" onclick="location.href='https://www.cameyoox.com';">
           <h1 id="project_title" class="capitalize">{{ site.title }}</h1>
-          <h2 id="project_tagline" class="caption">{{ page.title }}</h2>
+          <h2 id="project_tagline" class="caption">{{ site.description.uk }}</h2>
     </div>
 
     <!-- MAIN CONTENT -->
