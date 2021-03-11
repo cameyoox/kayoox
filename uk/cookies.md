@@ -1,7 +1,5 @@
 ---
 layout: default-en
-description: We love shoes and discounts
-title: Score the best deals in Yoox
 sitemap: true
 ---
 <div class="text">

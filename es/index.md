@@ -1,8 +1,5 @@
 ---
 layout: default-es
-locale: es_ES
-title: Consigue las mejores ofertas de Yoox
-description: Consigue las mejores ofertas de Yoox
 datatable: true
 ---
 

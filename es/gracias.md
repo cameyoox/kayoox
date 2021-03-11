@@ -1,8 +1,5 @@
 ---
 layout: default-es
-locale: es_ES
-title: Consigue las mejores ofertas de Yoox
-description: Nos encantan los zapatos y los descuentos
 sitemap: false
 ---
 <h1 class="center">¡Gracias por sus comentarios!</h1>

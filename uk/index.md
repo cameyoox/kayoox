@@ -1,7 +1,5 @@
 ---
 layout: default-en
-title: Score the best deals in Yoox
-description: Score the best deals in Yoox
 datatable: true
 ---
 

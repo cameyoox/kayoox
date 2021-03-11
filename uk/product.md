@@ -1,7 +1,5 @@
 ---
 layout: default-en
-title: Score the best deals in Yoox
-description: We love shoes and discounts
 sitemap: false
 graph: true
 ---
