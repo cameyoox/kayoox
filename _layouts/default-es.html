@@ -245,6 +245,24 @@
               function parseColour(value, index, array) {
                   return "<span class='color-circle' style='background-color:  " + value + "'></span>"
               }
+
+
+              /* Cookies consent */
+
+              var cookieBtn = document.getElementById('cookieButton');
+              
+              cookieBtn.onclick = function() {
+                $.cookie('cookieConsent', 'true');
+                document.getElementById('cookieContainer').style.display = 'none'
+              };
+
+              var cookieConsented = $.cookie("cookieConsent");
+
+              if(cookieConsented != null && cookieConsented) {
+                document.getElementById('cookieContainer').style.display = 'none'
+              } else {
+                document.getElementById('cookieContainer').style.display = 'block'
+              }   
        });
     </script>
 {% endif %}
@@ -274,6 +292,17 @@
           <li><a href="/es/acerca-de.html">Sobre nosotros</a></li>
           <li><a href="/es/contacto.html">Contacto</a></li>
         </ul>
+    </div>
+    <!-- COOKIES  -->
+    <div class="cookieConsentContainer" id="cookieContainer">
+      <div class="cookieTitle">Cookies</div>
+      <div class="cookieDesc">
+        <p>
+          Utilizamos cookies propias y de terceros para obtener datos estadísticos de la navegación de nuestros usuarios y mejorar nuestros servicios. Si acepta o continúa navegando, consideramos que acepta nuestra política de cookies.
+        </p>  
+        <p>Para más detalles, vea nuestra <a href="/uk/cookies.html" target="_blank" class="">política de cookies</a>.</p>
+      </div>
+      <div class="cookieButton center" id="cookieButton"><a href="#">Entendido</a></div>
     </div>
   </body>
 </html>

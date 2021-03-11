@@ -242,9 +242,27 @@
 
               function parseColour(value, index, array) {
                   return "<span class='color-circle' style='background-color:  " + value + "'></span>"
-              }     
-       });
-    </script>
+              }  
+
+              /* Cookies consent */
+
+              var cookieBtn = document.getElementById('cookieButton');
+              
+              cookieBtn.onclick = function() {
+                $.cookie('cookieConsent', 'true');
+                document.getElementById('cookieContainer').style.display = 'none'
+              };
+
+              var cookieConsented = $.cookie("cookieConsent");
+
+              if(cookieConsented != null && cookieConsented) {
+                document.getElementById('cookieContainer').style.display = 'none'
+              } else {
+                document.getElementById('cookieContainer').style.display = 'block'
+              }   
+        });
+      
+   </script>
 {% endif %}
 
 {% seo %}
@@ -272,6 +290,18 @@
           <li><a href="/uk/about.html">About us</a></li>
           <li><a href="/uk/contact.html">Contact</a></li>
         </ul>
+    </div>
+
+    <!-- COOKIES  -->
+    <div class="cookieConsentContainer" id="cookieContainer">
+      <div class="cookieTitle">Cookies</div>
+      <div class="cookieDesc">
+        <p>
+          Use use own and third party cookies to get statistical data from our users and improve our services. By accepting or continue browsing our site, we consider you accept our cookie policy.
+        </p>  
+        <p>More details in our <a href="/uk/cookies.html" target="_blank" class="">cookie policy</a>.</p>
+      </div>
+      <div class="cookieButton center" id="cookieButton"><a href="#">Understood</a></div>
     </div>
   </body>
 </html>
