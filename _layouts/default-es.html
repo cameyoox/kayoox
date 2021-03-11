@@ -224,11 +224,12 @@
               });
 
               if(searchHash && searchString) {
-                table.search(decodeURI(searchString), 3).draw();
+                table.column(2).search('').column(3).search(decodeURI(searchString)).column(4).search('').draw();
                 title_text = decodeURIComponent(searchString).charAt(0).toUpperCase() + decodeURIComponent(searchString).slice(1);
                 document.title = title_text + " | Cameyoox";
               } else {
-                table.search("", 3).draw();
+                // clean all filters
+                table.search("").draw();
               }    
           
               $('#example tbody').on('click', 'tr', function () {
