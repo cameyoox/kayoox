@@ -243,7 +243,13 @@
 
               function parseColour(value, index, array) {
                   return "<span class='color-circle' style='background-color:  " + value + "'></span>"
-              }  
+              }
+
+              $('#example').on( 'page.dt', function () {
+                  $('html, body').animate({
+                      scrollTop: 0
+                  }, 200);        
+              });  
 
               /* Cookies consent */
 
