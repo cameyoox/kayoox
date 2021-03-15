@@ -546,3 +546,73 @@ button {
     cursor: pointer;
     margin-bottom: 10px;
 }
+
+/* 404 page */
+
+.tag {
+       float: left;
+       position: absolute;
+       left: 100px;
+       top: 200px;
+       z-index: 1000;
+       padding: 5px;
+       font-weight: bold;
+       font-size: 3em;
+    }
+
+.tag2 {
+float: left;
+ position: absolute;
+ left: 100px;
+ top: 300px;
+ z-index: 1000;
+ padding: 5px;
+ font-weight: bold;
+ font-size: 3em;
+}
+
+.notice {
+   float: left;
+   position: absolute;
+   left: 40px;
+   top: 1040px;
+   z-index: 1000;
+   padding: 5px;
+   font-size: 0.5em;
+}
+
+@media screen and (max-width: 375px) {
+.tag {
+       float: left;
+       position: absolute;
+       left: 30px;
+       top: 160px;
+       z-index: 1000;
+       padding: 5px;
+       font-weight: bold;
+       font-size: 1em;
+}
+
+.tag2 {
+   float: left;
+   position: absolute;
+   left: 30px;
+   top: 200px;
+   z-index: 1000;
+   padding: 5px;
+   font-weight: bold;
+   font-size: 1em;
+
+}
+
+.notice {
+   float: left;
+   position: absolute;
+   left: 40px;
+   top: 350px;
+   z-index: 1000;
+   padding: 5px;
+   font-size: 0.5em;
+}
+
+}
