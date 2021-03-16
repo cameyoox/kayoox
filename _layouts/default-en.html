@@ -2,19 +2,9 @@
 <html lang="en">
 
   <head>
-    {% if site.analytics_uk %}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-361FNV75S6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    {% seo %}
 
-      gtag('config', 'G-361FNV75S6');
-    </script>
-    {% endif %}
     <meta charset='utf-8'>
-    <meta name="description" content="Discounted designer women's shoes">
     <meta name="keywords" content="Shoes, footwear, boots, women, discount, sales, designer, branded, luxury, outlet">
     <meta name="author" content="Cameyoox">
     <meta property="og:type" content="website"/>
@@ -28,6 +18,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
+{% if site.analytics_uk %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-361FNV75S6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-361FNV75S6');
+    </script>
+    {% endif %}
 {% if page.graph == true %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js"></script>   
 {% endif %}
@@ -294,7 +295,7 @@
   </script>   
 {% endif %}
 
-{% seo %}
+
 
 {% include analytics.html %}
   </head>

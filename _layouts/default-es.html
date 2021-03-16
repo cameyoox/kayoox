@@ -2,18 +2,9 @@
 <html lang="es_ES">
 
   <head>
-    {% if site.analytics_es %}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7K8GZB7G3T"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-7K8GZB7G3T');
-      </script>
-    {% endif %}    
+    {% seo %}
+ 
     <meta charset='utf-8'>
-    <meta name="description" content="Zapatos de marca para mujer con descuento">
     <meta name="keywords" content="Zapatos, calzado, botas, mujer, descuento, rebajas, marca, firma, diseño, lujo, outlet">
     <meta name="author" content="Cameyoox">
     <meta property="og:type" content="website"/>
@@ -26,6 +17,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+{% if site.analytics_es %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7K8GZB7G3T"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7K8GZB7G3T');
+      </script>
+{% endif %} 
 
 {% if page.graph == true %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js"></script>   
@@ -294,7 +296,7 @@
   </script>   
 {% endif %}
 
-{% seo %}
+
 
 {% include analytics.html %}
   </head>
