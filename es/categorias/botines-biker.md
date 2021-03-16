@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+---
+layout: empty
+---
 <html lang="es">
 
   <head>
