@@ -28,6 +28,4 @@ layout: default-en
 			window.location = country + '/index.html'
 		}
 	});
-
-
 </script>	
