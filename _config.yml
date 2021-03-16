@@ -1,8 +1,9 @@
 theme: jekyll-theme-minimal
 name: Cameyoox
 title: Cameyoox
-description: Score the best deals in Yoox
-tagline: Score the best deals in Yoox
+description:
+  uk: Score the best deals in Yoox
+  es: Consigue las mejores ofertas en Yoox
 twitter:
   username: cameyoox
   card: summary

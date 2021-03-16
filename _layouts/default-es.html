@@ -2,14 +2,20 @@
 <html lang="es_ES">
 
   <head>
-    {% seo %}
- 
+    <title>{{ site.title }} | {{ site.description.es }}</title>
+    <meta name="description" content="{{ site.description.uk }}" />
     <meta charset='utf-8'>
     <meta name="keywords" content="Zapatos, calzado, botas, mujer, descuento, rebajas, marca, firma, diseño, lujo, outlet">
     <meta name="author" content="Cameyoox">
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content="http://www.cameyoox.com/assets/images/cameyoox.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{{ site.title }}" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:description" content="{{ site.description.es }}" />
+    <meta property="og:url" content="http://www.cameyoox.com/es/" />
+    <meta property="og:site_name" content="{{ site.name }}" />
+    <meta property="og:image" content="http://www.cameyoox.com/assets/images/cameyoox.png" />
+    <link rel="canonical" href="http://www.cameyoox.com/uk/" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/custom.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -295,8 +301,6 @@
      });
   </script>   
 {% endif %}
-
-
 
 {% include analytics.html %}
   </head>
