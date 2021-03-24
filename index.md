@@ -8,6 +8,7 @@ layout: default-en
 <ul>
 	<li>🇪🇸 <a class="" href="#" id="es">España</a></li>
 	<li>🇬🇧 <a href="#" id="uk">United Kingdom</a></li>
+	<li>🇺🇸 <a class="" href="#" id="us">United States</a></li>
 </ul>
 </div>
 
@@ -20,6 +21,11 @@ layout: default-en
 	$('#uk').on( "click", function() {
 		$.cookie('country', 'uk');
 		window.location.href = "uk/index.html";
+	});
+
+	$('#us').on( "click", function() {
+		$.cookie('country', 'us');
+		window.location.href = "us/index.html";
 	});
 
 	$(document).ready(function() {

@@ -4,6 +4,7 @@ title: Cameyoox
 description:
   uk: Score the best deals in Yoox
   es: Consigue las mejores ofertas en Yoox
+  us: Score the best deals in Yoox
 twitter:
   username: cameyoox
   card: summary
@@ -18,6 +19,7 @@ locale: en
 
 analytics_uk: G-361FNV75S6
 analytics_es: G-7K8GZB7G3T
+analytics_us: G-B42YT4EGMJ
 
 plugins:
   - jekyll-sitemap

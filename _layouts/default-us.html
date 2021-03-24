@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ site.title }} | {{ site.description.us }}</title>
+    <meta name="description" content="{{ site.description.us }}" />
+    <meta charset='utf-8'>
+    <meta name="keywords" content="Shoes, footwear, boots, women, discount, sales, designer, branded, luxury, outlet">
+    <meta name="author" content="Cameyoox">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{{ site.title }}" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:description" content="{{ site.description.us }}" />
+    <meta property="og:url" content="http://www.cameyoox.com" />
+    <meta property="og:site_name" content="{{ site.name }}" />
+    <meta property="og:image" content="http://www.cameyoox.com/assets/images/cameyoox.png" />
+    <link rel="canonical" href="http://www.cameyoox.com" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/custom.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+{% if site.analytics_us %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B42YT4EGM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B42YT4EGM');
+    </script>
+    {% endif %}
+{% if page.graph == true %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js"></script>   
+{% endif %}
+
+{% if page.datatable == true %}
+    
+    <!-- Include the standard DataTables bits -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+    <!-- First, this walks through the tables that occur between ...-begin
+         and ...-end and add the "datatable" class to them.
+         Then it invokes DataTable's standard initializer
+         Credit here: http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
+      -->
+    <script>
+      $(document).ready(function() {
+          // First, get the search parameter
+          var searchHash = location.hash.substr(1),
+          searchString = searchHash.substr(searchHash.indexOf('search='))
+                      .split('&')[0]
+                      .split('=')[1];
+
+          $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
+          
+          var table = $('table.display').DataTable({
+              ajax: '/assets/data/data-us.txt',
+              deferRender: true,
+              scrollX: false,
+              scrollY: false,
+              paging: true,
+              stateSave: true,
+              searching: true,
+              drawCallback: function() {
+                $("img.lazy").lazyload();
+              },
+              "createdRow": function ( row, data, index ) {
+                $(row).addClass("pointer");
+              },
+              columnDefs: [
+                {
+                  targets:  [0],
+                  visible: false,
+                  orderable: false,
+                  searchable: false
+                },
+                {
+                    targets: [1],
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, full, meta) {
+                      if (data != "") {
+                        var prefix = data.substring(0,2)
+                        return "<img class='lazy' data-original='https://www.yoox.com/images/items/" + prefix + "/" + data + "_14_f.jpg?width=90&height=115&impolicy=crop&gravity=Center' width='90' height='115'/>"  
+                      }
+                      return ""
+                    },
+                    createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('style', 'text-align: left;');
+                    }
+                }, 
+                {
+                 targets: [2], 
+                 orderable: false,
+                 searchable: true,
+                 createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Brand');
+                    }
+                },
+                {
+                 targets: [3], 
+                 orderable: false,
+                 searchable: true,
+                 createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Category');
+                    }
+                },
+                {
+                 targets: [4], 
+                 orderable: false,
+                 searchable: true,
+                 createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Size');
+                    }
+                },
+                {
+                  targets: [5],
+                  orderable: false,
+                  render: function(data, type, full, meta) {
+                      if (data != "") {
+                        colourContent = "<span class='text-center'>"
+
+                        colours = data.split(",")
+                        colours = colours.map(parseColour)
+                        colourContent = colourContent.concat(colours.join(""))
+                        colourContent = colourContent.concat("</span>")
+
+                        return colourContent
+                      }
+                      return "<span class='text-center'>"+parseColour('rgba(0, 0, 0, 0)')+"</span>"
+                    },
+                  createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Colours');
+                    }  
+                },
+                {
+                  targets: [6],
+                  searchable: false,
+                  render: $.fn.dataTable.render.number( '.', ',', 2, '$' ),
+                  createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Current price');
+                    }
+                },
+                {
+                  targets: [7],
+                  searchable: false,
+                  render: $.fn.dataTable.render.number( '.', ',', 2, '$' ),
+                  createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Max. price');
+                    }
+                },
+                {
+                  targets: [8],
+                  searchable: false,
+                  render: $.fn.dataTable.render.number( '.', ',', 2, '$' ),
+                  createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Min. price');
+                    }
+                },
+                {
+                  targets: [9],
+                  searchable: false,
+                  render: $.fn.dataTable.render.number( '.', ',', 2, '$' ),
+                  createdCell: function (td, cellData, rowData, row, col) {
+                      $(td).attr('data-label', 'Current discount');
+                    }
+                }
+              ],
+              initComplete: function () {
+
+                var columns_process = [2,3,4]
+                
+                this.api().columns().every( function () {
+
+                    var column = this;
+                    
+                    if (columns_process.includes(column.index())) { 
+                      var columnId = "column" + column.index()
+
+                      if(column.index() != 4) {
+                        var availableTags = []
+
+                        column.data().unique().sort().each( function ( d, j ) {
+                            availableTags.push( d )
+                        } );
+
+                        availableTags.sort();
+                      } else {
+                        availableTags = ["4", "4.5", "5", "5.5", "6", "6.5","7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5","12"];
+                      }
+                      
+                      $( "#"+ columnId ).autocomplete({
+                            source: availableTags,
+                            select: function(e, ui) {
+                                
+                                if ( column.search() !== ui.item.value ) {
+                                  searchTerm = ui.item.value;
+                                  
+                                  if(column.index() == 4) {
+                                      searchTerm = ui.item.value + "(?![^ ])";      
+                                  }
+                                  
+                                  column
+                                    .search( searchTerm , true, false)
+                                    .draw();
+                              }
+                          }
+                      });
+
+                      $( "#"+ columnId ).on('search', function () {
+                        if ( column.search() !== this.value ) {
+                          column
+                              .search( this.value )
+                              .draw();
+                        }
+                      }); 
+                    }
+                  }); 
+
+                  document.getElementById("loader").remove();
+                
+                }
+              });
+
+              if(searchHash && searchString) {
+                table.column(2).search('').column(3).search(decodeURI(searchString)).column(4).search('').draw();
+                title_text = decodeURIComponent(searchString).charAt(0).toUpperCase() + decodeURIComponent(searchString).slice(1);
+                document.title = title_text + " | Cameyoox";
+              } else {
+                // clean all filters
+                table.search("").draw();
+              }   
+            
+              $('#example tbody').on('click', 'tr', function () {
+                var data = table.row( this ).data();
+                window.open('product.html?product=' + data[0] 
+                                      + '&brand=' + data[2] 
+                                      + '&category=' + data[3]
+                                      + '&price=' + data[6]
+                                      + '&maxprice=' + data[7]
+                                      + '&minprice=' + data[8]
+                                      ,'_blank');
+              });
+
+              function parseColour(value, index, array) {
+                  return "<span class='color-circle' style='background-color:  " + value + "'></span>"
+              }
+
+              $('#example').on( 'page.dt', function () {
+                  $('html, body').animate({
+                      scrollTop: 0
+                  }, 200);        
+              });  
+
+              /* Cookies consent */
+
+              var cookieBtn = document.getElementById('cookieButton');
+
+              cookieBtn.onclick = function() {
+
+                $.cookie('cookieConsent', 'true');
+                document.getElementById('cookieContainer').style.display = 'none'
+              };
+
+              var cookieConsented = $.cookie("cookieConsent");
+
+              if(cookieConsented != null && cookieConsented) {
+                document.getElementById('cookieContainer').style.display = 'none'
+              } else {
+                document.getElementById('cookieContainer').style.display = 'block'
+              }   
+        });
+      
+   </script>
+{% else %}
+  <script>
+    $(document).ready(function() {
+      /* Cookies consent */
+
+      var cookieBtn = document.getElementById('cookieButton');
+      cookieBtn.onclick = function() {
+
+        $.cookie('cookieConsent', 'true');
+        document.getElementById('cookieContainer').style.display = 'none'
+      };
+
+      var cookieConsented = $.cookie("cookieConsent");
+
+      if(cookieConsented != null && cookieConsented) {
+        document.getElementById('cookieContainer').style.display = 'none'
+      } else {
+        document.getElementById('cookieContainer').style.display = 'block'
+      }  
+     });
+  </script>   
+{% endif %}
+
+{% include analytics.html %}
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <div class="header center" onclick="location.href='https://www.cameyoox.com';">
+          <h1 id="project_title" class="capitalize">{{ site.title }}</h1>
+          <h2 id="project_tagline" class="caption">{{ site.description.us }}</h2>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="content-container" class="content">
+      {{ content }}
+    </div>
+
+    <!-- FOOTER  -->
+    <div class="center footer">
+      <p class="copyright">© 2021 {{ site.title }}</p>
+        <ul>
+          <li><a href="/us/cookies.html">Cookies policy</a></li>
+          <li><a href="/us/about.html">About us</a></li>
+          <li><a href="/us/contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- COOKIES  -->
+    <div class="cookieConsentContainer" id="cookieContainer">
+      <div class="cookieTitle">Cookies</div>
+      <div class="cookieDesc">
+        <p>
+          Use use own and third party cookies to get statistical data from our users and improve our services. By accepting or continue browsing our site, we consider you accept our cookie policy.
+        </p>  
+        <p>More details in our <a href="/us/cookies.html" target="_blank" class="">cookie policy</a>.</p>
+      </div>
+      <div class="cookieButton center" id="cookieButton"><a href="#">Understood</a></div>
+    </div>  
+  </body>
+</html>
