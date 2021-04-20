@@ -267,6 +267,7 @@
               var cookieBtn = document.getElementById('cookieButton');
               
               cookieBtn.onclick = function() {
+                dataLayer.push({'consent': 'true','event': 'acceptConsent'});
                 $.cookie('cookieConsent', 'true');
                 document.getElementById('cookieContainer').style.display = 'none'
               };
