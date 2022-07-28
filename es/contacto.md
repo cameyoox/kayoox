@@ -11,14 +11,20 @@ sitemap: true
 			<label>Asunto</label>
 		</div>
 		<div>
-	    	<input type="text" name="entry.214056702" required title="Este campo es requerido">
+	    		<input type="text" name="entry.214056702" required title="Este campo es requerido">
 	  	</div>
 	  	<div>
-	    	<label>Mensaje</label>
+	    		<label>Mensaje</label>
 	  	</div>
-	    <div>
-	    	<textarea rows="10" name="entry.1681811933" required></textarea>
-	    </div>
+		<div>
+			<textarea rows="10" name="entry.1681811933" required></textarea>
+		</div>
+		<div>
+			<label class="">Esto es un CAPTCHA. Cuanto son dos por tres?</label>
+		</div>
+		<div>
+	    		<input type="text" name="entry.878377537" required>
+	  	</div>
 	    <button type="submit">Enviar</button>
 	</form>
 </div>
