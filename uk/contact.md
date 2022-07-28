@@ -6,7 +6,7 @@ sitemap: true
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='/uk/thankyou.html';}"></iframe>
 <h1 class="center">Contact us</h1>
 <div class="text">
-	<form class="form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSffzVzwTs96n-vqt6Y3ZGb0rNIWpimGocHIm5u2a0PoBCLojA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+	<form class="form" action="[https://docs.google.com/forms/u/0/d/e/1FAIpQLSffzVzwTs96n-vqt6Y3ZGb0rNIWpimGocHIm5u2a0PoBCLojA](https://docs.google.com/forms/d/e/1FAIpQLSeZ-l47AwUw3ZVsj8c7AJuw5YeJ4SQsM8Mz4kun0Ey0AvaK2g)/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
 		<div>
 			<label class="">Subject</label>
 		</div>
