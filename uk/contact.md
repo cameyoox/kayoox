@@ -19,6 +19,12 @@ sitemap: true
 	    <div>
 	    	<textarea rows="10" name="entry.1967785439" required></textarea>
 	    </div>
+		<div>
+			<label class="">This is a CAPTCHA. How much it is three times two?</label>
+		</div>
+		<div>
+	    	<input type="text" name="entry.2006922654" required>
+	  	</div>
 	    <button type="submit">Send</button>
 	</form>
 </div>
